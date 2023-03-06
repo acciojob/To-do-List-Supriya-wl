@@ -1,17 +1,26 @@
-//your code here
-var todoValue = document.getElementById("newTodoInput").value;
-var btn = document.getElementById("addTodoBtn");
-var ol = document.getElementById("todoList");
+function createNode () {
+  const span = document.getElementById("span2");
+  const parentElement = span.parentNode;
+  const span1= document.createElement('span');
+  span1.textContent= "Dynamic";
+  parentElement.insertBefore(span1, span);
 
-function addTodo() {
-  if (todoValue.value) {
-    // we need to create a li
-    var li = document.createElement("li");
-    li.textContent = todoValue.value;
-    ol.appendChild(li);
-    todoValue.value = "";
-  }
 }
 
-btn.addEventListener("click", addTodo);
+document.addEventListener('DOMContentLoaded', createNode);
 
+const todo = document.getElementById("addTodoBtn");
+const list = document.getElementById("todoList");
+
+function addTodo() {
+  var input = document.getElementById("newTodoInput");
+
+  if(input.value) {
+    var li = document.createElement("li");
+    li.textContent = input.value;
+
+    list.appendChild(li);
+
+    input.value = "";
+  }
+}
