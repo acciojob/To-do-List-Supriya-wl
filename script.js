@@ -1,13 +1,15 @@
-//your code herevar todoValue = document.getElementById("newTodoInput").value;
+var todoValue = document.getElementById("newTodoInput");
 var btn = document.getElementById("addTodoBtn");
 var ol = document.getElementById("todoList");
 
 function addTodo() {
-  if (todoValue) {
+  //alert(todoValue.value);
+  if (todoValue.value) {
     // we need to create a li
     var li = document.createElement("li");
-    li.textContent = todoValue;
+    li.textContent = todoValue.value;
     ol.appendChild(li);
+    todoValue.value = "";
   }
 }
 
